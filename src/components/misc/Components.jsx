@@ -2,7 +2,9 @@ import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const base = css`
-	font-size: ${({ small, medium, large }) => {
+	font-size: ${({ small, medium, large, size }) => {
+		if (size != null) return size;
+
 		switch (true) {
 			case small:
 				return '15px';
@@ -28,7 +30,7 @@ const base = css`
 		}
 	}};
 
-	color: ${({ white, black, color }) => {
+	color: ${({ white, black, color, theme }) => {
 		switch (true) {
 			case white:
 				return 'white';
@@ -41,7 +43,7 @@ const base = css`
 		}
 	}};
 
-	font-family: ${({ fontFamily }) => (fontFamily ? fontFamily : 'Helvetica, sans-serif')};
+	font-family: ${({ fontFamily, theme }) => (fontFamily ? fontFamily : theme.fontFamily)};
 	outline: none;
 `;
 
@@ -82,7 +84,7 @@ export const OutlinedButton = styled.button`
 	}
 `;
 
-export const FlexContainer = styled.div`
+const FlexContainerBase = css`
 	display: flex;
 
 	align-items: ${({ alignCenter, alignLeft, alignRight }) => {
@@ -138,6 +140,10 @@ export const FlexContainer = styled.div`
 	flex: ${({ flex }) => (flex ? flex : '1')};
 `;
 
+export const FlexContainer = styled.div`
+	${FlexContainerBase}
+`;
+
 export const Box = styled.div`
 	width: ${({ width }) => (width ? width : '50%')};
 	height: ${({ height }) => (height ? height : '50%')};
@@ -190,8 +196,39 @@ export const FlexList = styled(FlexContainer)`
 export const StyledLink = styled(Link)`
 	${base}
 	text-decoration: none;
-
+	padding: ${({ padding }) => (padding ? padding : '5px')};
 	:hover {
 		color: ${({ hoverColor }) => (hoverColor ? hoverColor : '#4d4d4d')};
 	}
+`;
+
+export const Bar = styled(Box)`
+	${FlexContainerBase}
+	background-color: ${({ color }) => (color ? color : '#e6e6e6')};
+
+	border: none;
+	border-bottom: ${({ boldBorder, softBorder }) => {
+		switch (true) {
+			case boldBorder:
+				return '1px solid #333333';
+			case softBorder:
+				return '1px solid #e0e0e0';
+			default:
+				return 'none';
+		}
+	}};
+`;
+
+export const Container = styled.div`
+	display: flex;
+	width: 90%;
+	margin: auto;
+	align-items: center;
+`;
+
+export const Image = styled.img`
+	height: ${({ height }) => (height ? height : '30px')};
+	width: ${({ width }) => (width ? width : '30px')};
+
+	border: ${({ border }) => (border ? '1px solid #c4c4c4' : 'none')};
 `;

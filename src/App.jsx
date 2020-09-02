@@ -1,10 +1,16 @@
 import React from 'react';
+import Navbar from './components/misc/Navbar';
+import { ThemeProvider } from 'styled-components';
+
+const theme = {
+	fontFamily: 'Open Sans',
+};
 
 const App = () => {
 	return (
-		<>
-			<h1>Hello World!</h1>
-		</>
+		<ThemeProvider theme={theme}>
+			<Navbar />
+		</ThemeProvider>
 	);
 };
 

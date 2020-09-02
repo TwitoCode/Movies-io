@@ -4,6 +4,11 @@
 	box-sizing: border-box;
 }
 
+@font-face {
+	font-family: Metropolis-Regular;
+	src: url('./assets/fonts/Metropolis-Regular.otf');
+}
+
 body {
-	font-family: 'Nunito', Helvetica, sans-serif;
+	font-family: 'Metropolis-Regular', Helvetica, sans-serif;
 }
