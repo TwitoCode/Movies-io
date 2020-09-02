@@ -22,20 +22,20 @@ const Password = {
 	paddingTop: '10px',
 };
 
-const SignUpForm = () => {
+const SignInForm = () => {
 	const [email, bindEmail] = useInput('');
 	const [password, bindPassword] = useInput('');
 	const [CreateUser, SignIn, errorMessage] = useAuth(email, password);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		CreateUser(email, password);
+		SignIn(email, password);
 	};
 
 	return (
 		<Form style={{ padding: '30px', marginRight: '150px' }} onSubmit={handleSubmit}>
 			<FlexContainer column>
-				<Header size='30px'>Sign Up</Header>
+				<Header size='30px'>Sign In</Header>
 				<FlexContainer alignLeft contentCenter column style={Email}>
 					<Text>Email</Text>
 					<InputBox
@@ -56,8 +56,8 @@ const SignUpForm = () => {
 					/>
 				</FlexContainer>
 				{errorMessage && <Text color='red'>{errorMessage}</Text>}
-				<StyledLink blue to='/signin' style={{ paddingLeft: 0 }}>
-					Or Sign in
+				<StyledLink blue to='/signup' style={{ paddingLeft: 0 }}>
+					Or Sign up
 				</StyledLink>
 				<Button type='submit'>Submit</Button>
 			</FlexContainer>
@@ -65,4 +65,4 @@ const SignUpForm = () => {
 	);
 };
 
-export default SignUpForm;
+export default SignInForm;

@@ -8,6 +8,7 @@ import {
 	StyledLink,
 	Container,
 	Image,
+	Button,
 } from './Components';
 import logo from '../../assets/images/logo.png';
 
@@ -46,11 +47,16 @@ const Navbar = () => {
 						</StyledLink>
 					</FlexList>
 				</FlexContainer>
-				<FlexContainer flex='7' contentRight>
-					{user && (
-						<Text size='17.5px' white>
-							Signed in as {user.email}
-						</Text>
+				<FlexContainer flex='7' contentRight alignCenter>
+					{user != null && (
+						<>
+							<Text size='17.5px' white style={{ paddingRight: '20px' }}>
+								Signed in as {user.email}
+							</Text>
+							<Button small onClick={() => auth.signOut()}>
+								Sign Out
+							</Button>
+						</>
 					)}
 				</FlexContainer>
 			</Container>

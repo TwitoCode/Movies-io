@@ -14,7 +14,7 @@ const image03 =
 
 const ExampleBody = () => {
 	return (
-		<Box width='100vw' height='70vh' color='#dbdbdb' alignCenter contentCenter>
+		<Box width='100vw' height='fit-content' color='#dbdbdb' alignCenter contentCenter>
 			<Bar contentCenter alignCenter color='black' height='20vh' column>
 				<Header white size='50px'>
 					Its simple to find what you looking for

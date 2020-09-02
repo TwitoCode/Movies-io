@@ -242,7 +242,23 @@ export const StyledLink = styled(Link)`
 	padding: ${({ padding }) => (padding ? padding : '5px')};
 	:hover {
 		color: ${({ hoverColor }) => (hoverColor ? hoverColor : '#4d4d4d')};
+		text-decoration: none;
 	}
+
+	color: ${({ color, blue, white, black }) => {
+		switch (true) {
+			case color:
+				return color;
+			case blue:
+				return '#34aeeb';
+			case white:
+				return 'white';
+			case black:
+				return 'black';
+			default:
+				return 'white';
+		}
+	}};
 `;
 
 export const Bar = styled(Box)`
