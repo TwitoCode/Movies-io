@@ -25,9 +25,11 @@ const Navbar = () => {
 			<Container>
 				<FlexContainer flex='1' alignCenter>
 					<Image src={logo} style={{ paddingRight: '10px' }} />
-					<Text light white size='25px'>
-						Recipes.io
-					</Text>
+					<StyledLink to='/'>
+						<Text light white size='25px'>
+							Recipes.io
+						</Text>
+					</StyledLink>
 				</FlexContainer>
 				<FlexContainer flex='0.5' contentAround>
 					<FlexList row contentAround>

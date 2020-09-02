@@ -138,6 +138,17 @@ const FlexContainerBase = css`
 	}};
 
 	flex: ${({ flex }) => (flex ? flex : '1')};
+	width: ${({ full, half, width }) => {
+		if (width) return width;
+		switch (true) {
+			case full:
+				return '100%';
+			case half:
+				return '50%';
+			default:
+				return '100%';
+		}
+	}};
 `;
 
 export const FlexContainer = styled.div`
@@ -147,6 +158,7 @@ export const FlexContainer = styled.div`
 export const Box = styled.div`
 	width: ${({ width }) => (width ? width : '50%')};
 	height: ${({ height }) => (height ? height : '50%')};
+	background-color: ${({ color }) => (color ? color : '#e6e6e6')};
 
 	border: ${({ boldBorder, softBorder }) => {
 		switch (true) {
@@ -174,19 +186,6 @@ export const Jumbotron = styled(FlexContainer)`
 		url(${(props) => props.img});
 	background-position: center;
 	background-blend-mode: darken;
-
-	/* img {
-		filter: ${({ darken, lighten }) => {
-		switch (true) {
-			case darken:
-				return 'brightness(50%)';
-			case lighten:
-				return 'brightness(125%)';
-			default:
-				return 'null';
-		}
-	}};
-	} */
 
 	:after {
 		background: rgba(0, 0, 0, 0.5);
@@ -223,7 +222,6 @@ export const StyledLink = styled(Link)`
 
 export const Bar = styled(Box)`
 	${FlexContainerBase}
-	background-color: ${({ color }) => (color ? color : '#e6e6e6')};
 
 	border: none;
 	border-bottom: ${({ boldBorder, softBorder }) => {
@@ -240,7 +238,7 @@ export const Bar = styled(Box)`
 
 export const Container = styled.div`
 	display: flex;
-	width: 90%;
+	width: ${({ width }) => (width ? width : '90%')};
 	margin: auto;
 	align-items: center;
 `;
@@ -250,4 +248,14 @@ export const Image = styled.img`
 	width: ${({ width }) => (width ? width : '30px')};
 
 	border: ${({ border }) => (border ? '1px solid #c4c4c4' : 'none')};
+`;
+
+export const Header = styled.h1`
+	${base};
+	/* text-decoration: underline; */
+`;
+
+export const BackgroundImage = styled.div`
+	/* ${Box} */
+	background-image: url(${(props) => props.img});
 `;
