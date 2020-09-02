@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import HomePage from './components/pages/Home/HomePage';
+import HomePageChecker from './components/pages/HomePageChecker';
 import SignUpPage from './components/pages/SignUp/SignUpPage';
 import SignInPage from './components/pages/SignIn/SignInPage';
 
@@ -17,7 +17,7 @@ ReactDOM.render(
 			<Route exact path='/recipes' component={null} />
 			<Route exact path='/signin' component={SignInPage} />
 			<Route exact path='/signup' component={SignUpPage} />
-			<Route exact path='/' component={HomePage} />
+			<Route exact path='/' component={HomePageChecker} />
 			<Route exact path='/collection' component={null} />
 		</Switch>
 	</Router>,

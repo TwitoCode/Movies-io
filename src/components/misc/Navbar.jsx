@@ -48,6 +48,11 @@ const Navbar = () => {
 					</FlexList>
 				</FlexContainer>
 				<FlexContainer flex='7' contentRight alignCenter>
+					{!user && (
+						<StyledLink to='/signin'>
+							<Button small>Sign In</Button>
+						</StyledLink>
+					)}
 					{user != null && (
 						<>
 							<Text size='17.5px' white style={{ paddingRight: '20px' }}>

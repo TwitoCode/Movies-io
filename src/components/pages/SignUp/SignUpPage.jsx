@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlexContainer, Text, Header, Box } from '../../misc/Components';
+import { FlexContainer, Box } from '../../misc/Components';
 import SignUpForm from './SignUpForm';
 
 const rightImage =

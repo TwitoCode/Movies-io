@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { auth, db } from '../../Fire';
 
 const useAuth = (email, password) => {
