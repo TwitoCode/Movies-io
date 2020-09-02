@@ -51,8 +51,16 @@ export const Text = styled.text`
 	${base}
 `;
 
+const ButtonBase = css`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* width: ${({ width }) => (width ? width : '100px')}; */
+`;
+
 export const Button = styled.button`
 	${base}
+	${ButtonBase}
 	padding: ${({ padding }) => (padding ? padding : '10px')};
 	color: ${({ fontColor }) => (fontColor ? fontColor : 'white')};
 	background-color: ${({ bgColor }) => (bgColor ? bgColor : '#363636')};
@@ -170,14 +178,31 @@ export const Box = styled.div`
 				return 'none';
 		}
 	}};
+
+	background-image: url(${({ img }) => img});
+	background-position: center;
 `;
 
 export const InputBox = styled.input`
 	${base}
+	border: none;
 	padding: ${({ padding }) => (padding ? padding : '10px')};
+	padding-left: 0;
 	outline: none;
 	border-radius: ${({ radius }) => (radius ? radius : '3px')};
+	border-bottom: ${({ boldBorder, softBorder }) => {
+		switch (true) {
+			case boldBorder:
+				return '1px solid #333333';
+			case softBorder:
+				return '1px solid #e0e0e0';
+			default:
+				return 'none';
+		}
+	}};
+
 	color: ${({ color }) => (color ? color : '#787878')};
+	width: ${({ width }) => (width ? width : '100%')};
 `;
 
 export const Jumbotron = styled(FlexContainer)`

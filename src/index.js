@@ -6,6 +6,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './components/pages/Home/HomePage';
+import SignUpPage from './components/pages/SignUp/SignUpPage';
 
 ReactDOM.render(
 	<Router>
@@ -14,7 +15,7 @@ ReactDOM.render(
 			<Route exact path='/about' component={null} />
 			<Route exact path='/recipes' component={null} />
 			<Route exact path='/signin' component={null} />
-			<Route exact path='/signup' component={null} />
+			<Route exact path='/signup' component={SignUpPage} />
 			<Route exact path='/' component={HomePage} />
 			<Route exact path='/collection' component={null} />
 		</Switch>

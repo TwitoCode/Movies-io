@@ -17,16 +17,3 @@ firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const db = firebase.firestore();
-
-export const CreateUser = (email, password) => {
-	auth.createUserWithEmailAndPassword(email, password).then((cred) => {
-		console.log(`The account ${cred.user.email} was created and is now signed in`);
-		db.collection('User-Data').add(cred.user.uid);
-	});
-};
-
-export const SignIn = (email, password) => {
-	auth.signInWithEmailAndPassword(email, password).then((cred) => {
-		console.log(`The current user ${cred.user.email} is now signed in`);
-	});
-};
