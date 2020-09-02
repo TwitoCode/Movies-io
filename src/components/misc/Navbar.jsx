@@ -23,9 +23,9 @@ const Navbar = () => {
 	return (
 		<Bar width='100vw' height='7.5vh' alignCenter color='#00c452' softBorder>
 			<Container>
-				<FlexContainer flex='1'>
+				<FlexContainer flex='1' alignCenter>
 					<Image src={logo} style={{ paddingRight: '10px' }} />
-					<Text bold white>
+					<Text light white size='25px'>
 						Recipes.io
 					</Text>
 				</FlexContainer>

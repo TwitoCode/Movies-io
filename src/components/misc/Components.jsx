@@ -170,8 +170,27 @@ export const InputBox = styled.input`
 
 export const Jumbotron = styled(FlexContainer)`
 	background-color: ${({ color }) => (color ? color : 'none')};
-	background-image: url(${({ img }) => img});
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url(${(props) => props.img});
+	background-position: center;
+	background-blend-mode: darken;
 
+	/* img {
+		filter: ${({ darken, lighten }) => {
+		switch (true) {
+			case darken:
+				return 'brightness(50%)';
+			case lighten:
+				return 'brightness(125%)';
+			default:
+				return 'null';
+		}
+	}};
+	} */
+
+	:after {
+		background: rgba(0, 0, 0, 0.5);
+	}
 	width: 100vw;
 	height: ${({ height }) => (height ? height : '40vh')};
 
