@@ -11,9 +11,12 @@ ReactDOM.render(
 	<Router>
 		<App />
 		<Switch>
+			<Route exact path='/about' component={null} />
+			<Route exact path='/recipes' component={null} />
 			<Route exact path='/signin' component={null} />
 			<Route exact path='/signup' component={null} />
 			<Route exact path='/' component={HomePage} />
+			<Route exact path='/collection' component={null} />
 		</Switch>
 	</Router>,
 	document.getElementById('root')

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, Box, FlexContainer, Container, Header, Bar } from '../../misc/Components';
+import { Text, Box, Container, Header, Bar } from '../../misc/Components';
+import { CardDeck } from 'react-bootstrap';
 import RecipeBox from './RecipeBox';
 
 const image01 =
@@ -13,20 +14,21 @@ const image03 =
 
 const ExampleBody = () => {
 	return (
-		<Box width='100vw' height='60vh' color='#dbdbdb'>
-			<FlexContainer width='100%' contentCenter>
-				<Bar contentCenter alignCenter color='black' height='10vh'>
-					<Header white size='50px'>
-						Its simple to find what you looking for
-					</Header>
-				</Bar>
-			</FlexContainer>
+		<Box width='100vw' height='70vh' color='#dbdbdb' alignCenter contentCenter>
+			<Bar contentCenter alignCenter color='black' height='20vh' column>
+				<Header white size='50px'>
+					Its simple to find what you looking for
+				</Header>
+				<Text white>You can save recipes you find too</Text>
+			</Bar>
 			<Container width='50%'>
-				<FlexContainer row contentAround>
-					<RecipeBox name='Fried Rice' image={image01} extra='Fat: 2.3g' />
-					<RecipeBox name='Chicken' image={image02} extra='Protein: 7g' />
-					<RecipeBox name='Potatoes' image={image03} extra='Protein: 7g' />
-				</FlexContainer>
+				<div style={{ marginTop: '20px', marginBottom: '20px' }}>
+					<CardDeck>
+						<RecipeBox name='Fried Rice' image={image01} extra='Fat: 2.3g' />
+						<RecipeBox name='Chicken' image={image02} extra='Protein: 7g' />
+						<RecipeBox name='Potatoes' image={image03} extra='Protein: 7g' />
+					</CardDeck>
+				</div>
 			</Container>
 		</Box>
 	);
