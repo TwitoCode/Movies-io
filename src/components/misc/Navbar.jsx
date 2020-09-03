@@ -22,6 +22,11 @@ const Navbar = () => {
 		});
 	}, []);
 
+	const onLogout = () => {
+		window.location.href = '/';
+		auth.signOut();
+	};
+
 	return (
 		<Bar width='100vw' height='7.5vh' alignCenter color='#323232' softBorder>
 			<Container>
@@ -61,7 +66,7 @@ const Navbar = () => {
 							<Text size='17.5px' white style={{ paddingRight: '20px' }}>
 								Signed in as {user.email}
 							</Text>
-							<Button small bgColor='#1c1c1c' onClick={() => auth.signOut()}>
+							<Button small bgColor='#1c1c1c' onClick={onLogout}>
 								Sign Out
 							</Button>
 						</>

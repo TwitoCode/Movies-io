@@ -4,14 +4,14 @@ import { Card, CardImg } from 'react-bootstrap';
 
 const MovieCard = ({ title, poster, year }) => {
 	return (
-		<Card style={{ maxWidth: '350px' }}>
+		<Card>
 			<CardImg src={poster} />
 			<Card.Body>
-				<FlexContainer column>
-					<Header>{title}</Header>
-					<Card.Text>Released On: {year}</Card.Text>
-					<Button>Save Movie</Button>
-				</FlexContainer>
+				{/* <FlexContainer column> */}
+				<Card.Title>{title}</Card.Title>
+				<Card.Text>Released On: {year}</Card.Text>
+				<Button>Save Movie</Button>
+				{/* </FlexContainer> */}
 			</Card.Body>
 		</Card>
 	);

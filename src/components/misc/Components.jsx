@@ -170,6 +170,8 @@ const FlexContainerBase = css`
 				return '100%';
 		}
 	}};
+
+	flex-wrap: ${({ wrap }) => (wrap ? wrap : 'none')};
 `;
 
 export const FlexContainer = styled.div`
