@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Header, Text, FlexContainer } from './Components';
+import { Button, Header, FlexContainer } from './Components';
 import { Card, CardImg } from 'react-bootstrap';
 
 const RecipeCard = ({ name, image, details }) => {
@@ -8,7 +8,7 @@ const RecipeCard = ({ name, image, details }) => {
 			<CardImg src={image} />
 			<Card.Body>
 				<FlexContainer column>
-					<Text>{name}</Text>
+					<Header>{name}</Header>
 					<Card.Text>{details}</Card.Text>
 					<Button>Save Recipe</Button>
 				</FlexContainer>
