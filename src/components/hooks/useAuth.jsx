@@ -47,7 +47,7 @@ const useAuth = (email, password) => {
 
 			setTimeout(() => {
 				window.location.href = '/';
-			}, 1000);
+			}, 250);
 		} catch (error) {
 			switch (error.message) {
 				case nullError:

@@ -180,6 +180,7 @@ export const Box = styled.div`
 	width: ${({ width }) => (width ? width : '50%')};
 	height: ${({ height }) => (height ? height : '50%')};
 	background-color: ${({ color }) => (color ? color : '#e6e6e6')};
+	padding: ${({ padding }) => (padding ? padding : '0')};
 
 	border: ${({ boldBorder, softBorder }) => {
 		switch (true) {
@@ -306,6 +307,16 @@ export const Image = styled.img`
 
 export const Header = styled.h1`
 	${base};
+	border-bottom: ${({ softUnderline, boldUnderline }) => {
+		switch (true) {
+			case softUnderline:
+				return '1px solid  #c6c6c6';
+			case boldUnderline:
+				return '1px solid  #393939';
+			default:
+				return 'none';
+		}
+	}};
 `;
 
 export const BackgroundImage = styled.div`

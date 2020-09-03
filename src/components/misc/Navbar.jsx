@@ -35,7 +35,7 @@ const Navbar = () => {
 				</FlexContainer>
 				<FlexContainer flex='0.5' contentAround>
 					<FlexList row contentAround>
-						<StyledLink to='/recipes' white>
+						<StyledLink to='/movies' white>
 							Movies
 						</StyledLink>
 						{user && (
