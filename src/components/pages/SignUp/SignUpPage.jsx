@@ -3,14 +3,14 @@ import { FlexContainer, Box } from '../../misc/Components';
 import SignUpForm from './SignUpForm';
 
 const rightImage =
-	'https://s1.1zoom.me/b6648/834/Tomatoes_Pasta_Fork_Plate_544330_1920x1080.jpg';
+	'https://i.pinimg.com/originals/3c/f6/56/3cf656908a2481110485bac3bf1297d9.jpg';
 
 const SignUpPage = () => {
 	const style = {
 		display: 'grid',
 		placeItems: 'center',
 		height: '100vh',
-		backgroundColor: '#00c452',
+		backgroundColor: '#323232',
 	};
 
 	const body = {

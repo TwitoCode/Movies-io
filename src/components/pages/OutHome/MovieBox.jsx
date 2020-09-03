@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, FlexContainer, Button } from '../../misc/Components';
 import { Card, CardImg } from 'react-bootstrap';
 
-const RecipeBox = ({ name, image, extra }) => {
+const MovieBox = ({ name, image, extra }) => {
 	return (
 		<Card style={{ maxWidth: '300px' }}>
 			<CardImg src={image} />
@@ -10,11 +10,11 @@ const RecipeBox = ({ name, image, extra }) => {
 				<FlexContainer column>
 					<Text>{name}</Text>
 					<Card.Text>{extra}</Card.Text>
-					<Button>Save Recipe</Button>
+					<Button>Save Movie for Later</Button>
 				</FlexContainer>
 			</Card.Body>
 		</Card>
 	);
 };
 
-export default RecipeBox;
+export default MovieBox;

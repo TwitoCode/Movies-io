@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Header, FlexContainer } from './Components';
 import { Card, CardImg } from 'react-bootstrap';
 
-const RecipeCard = ({ name, image, details }) => {
+const MovieCard = ({ name, image, details }) => {
 	return (
 		<Card>
 			<CardImg src={image} />
@@ -17,4 +17,4 @@ const RecipeCard = ({ name, image, details }) => {
 	);
 };
 
-export default RecipeCard;
+export default MovieCard;

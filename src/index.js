@@ -14,7 +14,6 @@ ReactDOM.render(
 		<App />
 		<Switch>
 			<Route exact path='/about' component={null} />
-			<Route exact path='/recipes' component={null} />
 			<Route exact path='/signin' component={SignInPage} />
 			<Route exact path='/signup' component={SignUpPage} />
 			<Route exact path='/' component={HomePageChecker} />
@@ -23,4 +22,5 @@ ReactDOM.render(
 	</Router>,
 	document.getElementById('root')
 );
+
 serviceWorker.unregister();

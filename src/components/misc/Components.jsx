@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 const base = css`
 	font-size: ${({ small, medium, large, size }) => {
-		if (size != null) return size;
-
+		if (size) return size;
 		switch (true) {
 			case small:
 				return '15px';
@@ -31,13 +30,12 @@ const base = css`
 	}};
 
 	color: ${({ white, black, color, theme }) => {
+		if (color) return color;
 		switch (true) {
 			case white:
 				return 'white';
 			case black:
 				return 'black';
-			case color:
-				return color;
 			default:
 				return 'black';
 		}
@@ -45,9 +43,11 @@ const base = css`
 
 	font-family: ${({ fontFamily, theme }) => (fontFamily ? fontFamily : theme.fontFamily)};
 	outline: none;
+	padding: 0;
+	margin: 0;
 `;
 
-export const Text = styled.text`
+export const Text = styled.p`
 	${base}
 `;
 
@@ -146,8 +146,21 @@ const FlexContainerBase = css`
 	}};
 
 	flex: ${({ flex }) => (flex ? flex : '1')};
+
 	width: ${({ full, half, width }) => {
 		if (width) return width;
+		switch (true) {
+			case full:
+				return '100%';
+			case half:
+				return '50%';
+			default:
+				return '100%';
+		}
+	}};
+
+	height: ${({ full, half, height }) => {
+		if (height) return height;
 		switch (true) {
 			case full:
 				return '100%';
@@ -241,7 +254,7 @@ export const StyledLink = styled(Link)`
 	text-decoration: none;
 	padding: ${({ padding }) => (padding ? padding : '5px')};
 	:hover {
-		color: ${({ hoverColor }) => (hoverColor ? hoverColor : '#4d4d4d')};
+		color: ${({ hoverColor }) => (hoverColor ? hoverColor : '#d1d1d1')};
 		text-decoration: none;
 	}
 
@@ -293,7 +306,6 @@ export const Image = styled.img`
 
 export const Header = styled.h1`
 	${base};
-	/* text-decoration: underline; */
 `;
 
 export const BackgroundImage = styled.div`

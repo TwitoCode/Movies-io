@@ -9,6 +9,7 @@ import {
 	Container,
 	Image,
 	Button,
+	Header,
 } from './Components';
 import logo from '../../assets/images/logo.png';
 
@@ -22,20 +23,20 @@ const Navbar = () => {
 	}, []);
 
 	return (
-		<Bar width='100vw' height='7.5vh' alignCenter color='#00c452' softBorder>
+		<Bar width='100vw' height='7.5vh' alignCenter color='#323232' softBorder>
 			<Container>
-				<FlexContainer flex='1' alignCenter>
-					<Image src={logo} style={{ paddingRight: '10px' }} />
+				<FlexContainer flex='1' alignCenter row>
+					<Image src={logo} style={{ paddingRight: '10px' }} height='20px' />
 					<StyledLink to='/'>
-						<Text light white size='25px'>
-							Recipes.io
-						</Text>
+						<Header light white size='25px'>
+							Movies.io
+						</Header>
 					</StyledLink>
 				</FlexContainer>
 				<FlexContainer flex='0.5' contentAround>
 					<FlexList row contentAround>
 						<StyledLink to='/recipes' white>
-							Recipes
+							Movies
 						</StyledLink>
 						{user && (
 							<StyledLink to='/collection' white>
@@ -50,7 +51,9 @@ const Navbar = () => {
 				<FlexContainer flex='7' contentRight alignCenter>
 					{!user && (
 						<StyledLink to='/signin'>
-							<Button small>Sign In</Button>
+							<Button small bgColor='#1c1c1c'>
+								Sign In
+							</Button>
 						</StyledLink>
 					)}
 					{user != null && (
@@ -58,7 +61,7 @@ const Navbar = () => {
 							<Text size='17.5px' white style={{ paddingRight: '20px' }}>
 								Signed in as {user.email}
 							</Text>
-							<Button small onClick={() => auth.signOut()}>
+							<Button small bgColor='#1c1c1c' onClick={() => auth.signOut()}>
 								Sign Out
 							</Button>
 						</>

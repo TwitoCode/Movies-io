@@ -2,7 +2,7 @@ import React from 'react';
 import { Jumbotron, Header, Button, StyledLink } from '../../misc/Components';
 
 const image =
-	'https://www.wallpaperup.com/uploads/wallpapers/2014/11/09/511898/ac306ec95717abb0deb01c84ad2eaf0c.jpg';
+	'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/movies-to-watch-1585258004.jpg';
 
 const SignUpBody = () => {
 	return (

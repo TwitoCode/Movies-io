@@ -2,15 +2,14 @@ import React from 'react';
 import { FlexContainer, Box } from '../../misc/Components';
 import SignInForm from './SignInForm';
 
-const rightImage =
-	'https://s1.1zoom.me/b6648/834/Tomatoes_Pasta_Fork_Plate_544330_1920x1080.jpg';
+const rightImage = 'https://wallpaperaccess.com/full/1512225.jpg';
 
 const SignInPage = () => {
 	const style = {
 		display: 'grid',
 		placeItems: 'center',
 		height: '100vh',
-		backgroundColor: '#00c452',
+		backgroundColor: '#323232',
 	};
 
 	const body = {

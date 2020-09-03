@@ -25,7 +25,7 @@ const Password = {
 const SignInForm = () => {
 	const [email, bindEmail] = useInput('');
 	const [password, bindPassword] = useInput('');
-	const [CreateUser, SignIn, errorMessage] = useAuth(email, password);
+	const [, SignIn, errorMessage] = useAuth(email, password);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();

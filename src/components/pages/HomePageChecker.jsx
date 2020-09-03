@@ -4,20 +4,22 @@ import InHomePage from './InHome/InHomePage';
 import { auth } from '../../Fire';
 
 const HomePageChecker = () => {
-	const [user, setUser] = useState(null);
+	const [, setUser] = useState(null);
+	const [screenToShow, setScreenToShow] = useState(<></>);
 
 	useEffect(() => {
 		auth.onAuthStateChanged((user) => {
 			setUser(user);
+
+			if (user) {
+				setScreenToShow(<InHomePage />);
+			} else {
+				setScreenToShow(<OutHomePage />);
+			}
 		});
 	}, []);
 
-	return (
-		<>
-			{!user && <OutHomePage />}
-			{user && <InHomePage />}
-		</>
-	);
+	return <>{screenToShow}</>;
 };
 
 export default HomePageChecker;

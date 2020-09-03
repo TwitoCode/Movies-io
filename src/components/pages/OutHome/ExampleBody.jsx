@@ -1,16 +1,15 @@
 import React from 'react';
 import { Text, Box, Container, Header, Bar } from '../../misc/Components';
 import { CardDeck } from 'react-bootstrap';
-import RecipeBox from './RecipeBox';
+import MovieBox from './MovieBox';
 
 const image01 =
-	'https://www.jessicagavin.com/wp-content/uploads/2018/09/fried-rice-8-1200.jpg';
+	'https://images-na.ssl-images-amazon.com/images/I/A1t8xCe9jwL._AC_SY741_.jpg';
 
-const image02 =
-	'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/best-crispy-chicken-thighs-garlic-rosemary-1567793052.png?crop=0.670xw:1.00xh;0.0513xw,0&resize=640:*';
+const image02 = 'https://movieposters2.com/images/658686-b.jpg';
 
 const image03 =
-	'https://www.eatwell101.com/wp-content/uploads/2018/11/roasted-potatoes-recipe-5-1b-800x800.jpg';
+	'https://lh3.googleusercontent.com/proxy/9YlK2cL7fuWCpGyqERmBkZ07359lFRPJWJowDdc_3vcyvDexkhvK98Uliw_qIZ_y6QU9UAI8PHzMrbLucx-aiCBjW-0OTS5MK9RvPB6EqlR7paXs';
 
 const ExampleBody = () => {
 	return (
@@ -19,14 +18,26 @@ const ExampleBody = () => {
 				<Header white size='50px'>
 					Its simple to find what you looking for
 				</Header>
-				<Text white>You can save recipes you find too</Text>
+				<Text white>You can save movies you find too</Text>
 			</Bar>
 			<Container width='50%'>
 				<div style={{ marginTop: '20px', marginBottom: '20px' }}>
 					<CardDeck>
-						<RecipeBox name='Fried Rice' image={image01} extra='Fat: 2.3g' />
-						<RecipeBox name='Chicken' image={image02} extra='Protein: 7g' />
-						<RecipeBox name='Potatoes' image={image03} extra='Protein: 7g' />
+						<MovieBox
+							name='The Avengers'
+							image={image01}
+							extra='Released: April 27, 2018'
+						/>
+						<MovieBox
+							name='The Bee Movie'
+							image={image02}
+							extra='Released: November 2, 2007'
+						/>
+						<MovieBox
+							name='Hobbs and Shaw'
+							image={image03}
+							extra='Released: July 13, 2019'
+						/>
 					</CardDeck>
 				</div>
 			</Container>
